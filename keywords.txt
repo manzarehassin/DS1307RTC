@@ -1,0 +1,35 @@
+# =========================================================
+# Classes
+# =========================================================
+DS1307                      KEYWORD1
+softRTC_lite               KEYWORD1
+
+# =========================================================
+# Public Functions (conditionally compiled)
+# =========================================================
+setTime                    KEYWORD2
+sync                       KEYWORD2
+Weekday                    KEYWORD2
+getTime24h                 KEYWORD2
+getTime12h                 KEYWORD2
+printTime                  KEYWORD2
+readRam                    KEYWORD2
+writeRam                   KEYWORD2
+setOscillator              KEYWORD2
+
+# =========================================================
+# Constants / Macros
+# =========================================================
+RTC_FEATURE_WEEKDAYS       KEYWORD3
+RTC_FEATURE_12H_TIME       KEYWORD3
+RTC_FEATURE_SERIAL_PRINT   KEYWORD3
+RTC_FEATURE_RAM            KEYWORD3
+RTC_FEATURE_EEPROM         KEYWORD3
+RTC_FEATURE_BLINK          KEYWORD3
+
+RTC_DEVICE_ID              KEYWORD3
+rtc_ram_start              KEYWORD3
+rtc_osc_1hz                KEYWORD3
+rtc_osc_4khz               KEYWORD3
+rtc_osc_8khz               KEYWORD3
+rtc_osc_32khz              KEYWORD3
