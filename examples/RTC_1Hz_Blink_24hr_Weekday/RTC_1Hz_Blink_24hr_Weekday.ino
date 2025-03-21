@@ -31,10 +31,11 @@ Published at: 21 March, 2025 9:30 PM (UTC+6).
  */
 
 // Enable weekday and serial print; disable 12-hour conversion for 24-hour format
+#define RTC_FEATURE_BLINK 1
 #define RTC_FEATURE_WEEKDAYS 1
 #define RTC_FEATURE_12H_TIME 0
 #define RTC_FEATURE_SERIAL_PRINT 1
-#define RTC_FEATURE_BLINK 1
+
 #include <Wire.h>
 #include "DS1307.h"  // DS1307 library header
 
@@ -45,7 +46,8 @@ void setup() {
   Wire.begin();
   
   // Optionally set the RTC time here if needed:
-  // rtc.setTime(21, 3, 2025, 21, 30, 0);
+   rtc.setTime(21, 3, 2025, 21, 30, 0);
+   rtc.sync(); // Time Sync between Software and Hardware RTC
   
   // Enable the 1Hz oscillator output on the RTC SW pin.
   rtc.setOscillator(true, rtc_osc_1hz);
