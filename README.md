@@ -31,7 +31,7 @@ void setup() {
   Wire.begin();
   // Set RTC time: day, month, year, hour, minute, second.
   rtc.setTime(21, 3, 2025, 21, 30, 0);
-  delay(1000); // Allow RTC to update
+  rtc.sync(); // Sync time between software and hardware rtc.
   Serial.println("RTC time set to 21-03-2025 09:30:00 PM");
 }
 
@@ -49,6 +49,7 @@ void loop() {
 Configure the RTC to output a 1Hz square wave on its SW pin and display time in 24‑hour format with weekday support:
 
 ```cpp
+#define RTC_FEATURE_BLINK 1
 #define RTC_FEATURE_WEEKDAYS 1
 #define RTC_FEATURE_12H_TIME 0
 #define RTC_FEATURE_SERIAL_PRINT 1
@@ -63,7 +64,7 @@ void setup() {
   Wire.begin();
   // Optionally set the RTC time here
   // rtc.setTime(21, 3, 2025, 21, 30, 0);
-  
+  rtc.sync(); //synchronize time
   // Enable 1Hz square wave on the SW pin.
   rtc.setOscillator(true, rtc_osc_1hz);
   Serial.println("RTC 1Hz square wave enabled on SW pin");
