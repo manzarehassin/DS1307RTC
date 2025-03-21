@@ -46,7 +46,7 @@ void setup() {
   Wire.begin();
   
   // Optionally set the RTC time here if needed:
-   rtc.setTime(21, 3, 2025, 21, 30, 0);
+  // rtc.setTime(21, 3, 2025, 21, 30, 0);
    rtc.sync(); // Time Sync between Software and Hardware RTC
   
   // Enable the 1Hz oscillator output on the RTC SW pin.
