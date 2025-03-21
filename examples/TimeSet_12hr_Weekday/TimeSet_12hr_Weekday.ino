@@ -46,7 +46,7 @@ void setup() {
   
   // Set RTC time: Date: 21-03-2025, Time: 21:30:00 (24h value; 12h will show 9:30 PM)
   rtc.setTime(21, 3, 2025, 21, 30, 0);
-  delay(1000);  // Allow time for the RTC to update
+  rtc.sync(); // Time sync between Software and Hardware RTC.
   Serial.println("RTC time set to 21-03-2025 09:30:00 PM");
 }
 
