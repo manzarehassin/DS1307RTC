@@ -8,20 +8,11 @@ This Arduino library provides an interface for the DS1307 Real Time Clock (RTC) 
 
 - **Time Setting:** Easily set the RTC time.
 - **12‑Hour and 24‑Hour Formats:** Retrieve and print time in both formats.
-- **Weekday Support:** Calculate and display weekdays (e.g. Sun, Mon, Tue, etc.).
-- **Square Wave Output:** Configure the DS1307 to output a 1Hz (or other selectable frequencies) square wave on the SW pin.
+- **Weekday Support:** Calculate and display weekdays (e.g., Sun, Mon, Tue, etc.).
+- **Square Wave Output:** Configure the DS1307 to output a 1Hz (or selectable frequencies) square wave on the SW pin.
 - **NVRAM Access:** Read from and write to the DS1307 onboard RAM (56 bytes).
 
-## Usage
-
-1. **Include the Library**
-
-   Include the DS1307 header in your sketch:
-
-   ```cpp
-   #include <DS1307.h>
-   ```
-2. **Initialize and Set Time**
+## 2. Initialize and Set Time
 
 Instantiate the DS1307 class, initialize the I2C communication, and set the RTC time. For example:
 
@@ -83,3 +74,70 @@ void loop() {
   delay(1000);
 }
 ```
+
+### NVRAM Read/Write
+
+Write to and read from the DS1307's onboard NVRAM:
+
+```cpp
+#define RTC_FEATURE_RAM 1
+#define RTC_FEATURE_SERIAL_PRINT 1
+
+#include <Wire.h>
+#include <DS1307.h>
+
+DS1307 rtc;
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
+  
+  // Write a byte (0x55) to NVRAM address 0.
+  rtc.writeRam(0, 0x55);
+  Serial.print("Written to NVRAM address 0: 0x");
+  Serial.println(0x55, HEX);
+  
+  // Read the byte back.
+  uint8_t data = rtc.readRam(0);
+  Serial.print("Read from NVRAM address 0: 0x");
+  Serial.println(data, HEX);
+}
+
+void loop() {
+  // No repeated action needed.
+}
+```
+
+## Library Configuration
+
+The library supports several preprocessor directives to enable or disable specific features. Define these **before** including the library header:
+
+- `RTC_FEATURE_WEEKDAYS` – Enable weekday functionality.
+- `RTC_FEATURE_12H_TIME` – Enable 12‑hour time format.
+- `RTC_FEATURE_SERIAL_PRINT` – Enable serial time printing.
+- `RTC_FEATURE_RAM` – Enable NVRAM (RAM) read/write functions.
+- `RTC_FEATURE_BLINK` – Enable square wave output functionality.
+
+## Installation
+
+You can install this library using the Arduino Library Manager by searching for "DS1307" or by cloning the repository:
+
+```bash
+git clone https://github.com/manzarehassin/DS1307.git
+```
+
+## Compatibility
+
+- **Architectures:** AVR, ESP8266, SAM, MegaAVR (see `library.properties` for complete details)
+- **Dependencies:** Arduino core, Wire library.
+
+## License
+
+This library is distributed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Repository
+
+For the latest updates and more detailed documentation, visit the [DS1307 GitHub Repository](https://github.com/manzarehassin/DS1307).
+
+Published on: 21 March, 2025 9:30 PM (UTC+6)  
+Author: Manzar E Hassin <mnz247@hotmail.com>
