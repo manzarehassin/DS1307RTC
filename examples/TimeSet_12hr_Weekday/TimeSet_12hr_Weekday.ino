@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Available on github : https://github.com/manzarehassin/DS1307
+Available on github : https://github.com/manzarehassin/DS1307RTC
 Published at: 21 March, 2025 9:30 PM (UTC+6).
 */
 
