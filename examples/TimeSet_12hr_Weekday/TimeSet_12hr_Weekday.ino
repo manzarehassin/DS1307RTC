@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Available on github : https://github.com/manzarehassin/DS1307RTC
+Available on github : https://github.com/manzarehassin/tinyRTCds1307
 Published at: 21 March, 2025 9:30 PM (UTC+6).
 */
 
@@ -36,9 +36,9 @@ Published at: 21 March, 2025 9:30 PM (UTC+6).
 #define RTC_FEATURE_SERIAL_PRINT 1
 
 #include <Wire.h>
-#include "DS1307RTC.h"  // DS1307 library header
+#include "tinyRTCds1307.h"  // tinyRTCds1307 library header
 
-DS1307RTC rtc;
+tinyRTCds1307 rtc;
 
 void setup() {
   Serial.begin(9600);

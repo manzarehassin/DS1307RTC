@@ -1,4 +1,4 @@
-# DS1307 Real Time Clock Library
+# tinyRTCds1307 Real Time Clock Library
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -14,7 +14,7 @@ This Arduino library provides an interface for the DS1307 Real Time Clock (RTC) 
 
 ## 2. Initialize and Set Time
 
-Instantiate the DS1307RTC class, initialize the I2C communication, and set the RTC time. For example:
+Instantiate the tinyRTCds1307 class, initialize the I2C communication, and set the RTC time. For example:
 
 ```cpp
 #define RTC_FEATURE_WEEKDAYS 1
@@ -22,9 +22,9 @@ Instantiate the DS1307RTC class, initialize the I2C communication, and set the R
 #define RTC_FEATURE_SERIAL_PRINT 1
 
 #include <Wire.h>
-#include <DS1307RTC.h>
+#include <tinyRTCds1307.h>
 
-DS1307RTC rtc;
+tinyRTCds1307 rtc;
 
 void setup() {
   Serial.begin(9600);
@@ -55,9 +55,9 @@ Configure the RTC to output a 1Hz square wave on its SW pin and display time in 
 #define RTC_FEATURE_SERIAL_PRINT 1
 
 #include <Wire.h>
-#include <DS1307RTC.h>
+#include <tinyRTCds1307.h>
 
-DS1307RTC rtc;
+tinyRTCds1307 rtc;
 
 void setup() {
   Serial.begin(9600);
@@ -85,9 +85,9 @@ Write to and read from the DS1307's onboard NVRAM:
 #define RTC_FEATURE_SERIAL_PRINT 1
 
 #include <Wire.h>
-#include <DS1307RTC.h>
+#include <tinyRTCds1307.h>
 
-DS1307RTC rtc;
+tinyRTCds1307 rtc;
 
 void setup() {
   Serial.begin(9600);
@@ -124,7 +124,7 @@ The library supports several preprocessor directives to enable or disable specif
 You can install this library using the Arduino Library Manager by searching for "DS1307" or by cloning the repository:
 
 ```bash
-git clone https://github.com/manzarehassin/DS1307RTC.git
+git clone https://github.com/manzarehassin/tinyRTCds1307.git
 ```
 
 ## Compatibility
@@ -138,7 +138,7 @@ This library is distributed under the MIT License. See the [LICENSE](LICENSE) fi
 
 ## Repository
 
-For the latest updates and more detailed documentation, visit the [DS1307RTC GitHub Repository](https://github.com/manzarehassin/DS1307RTC).
+For the latest updates and more detailed documentation, visit the [DS1307RTC GitHub Repository](https://github.com/manzarehassin/tinyRTCds1307).
 
 Published on: 21 March, 2025 9:30 PM (UTC+6)  
 Author: Manzar E Hassin <mnz247@hotmail.com>
