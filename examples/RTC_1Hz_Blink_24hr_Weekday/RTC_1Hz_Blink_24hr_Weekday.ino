@@ -37,9 +37,9 @@ Published at: 21 March, 2025 9:30 PM (UTC+6).
 #define RTC_FEATURE_SERIAL_PRINT 1
 
 #include <Wire.h>
-#include "DS1307.h"  // DS1307 library header
+#include "DS1307RTC.h"  // DS1307 library header
 
-DS1307 rtc;
+DS1307RTC rtc;
 
 void setup() {
   Serial.begin(9600);
